@@ -29,4 +29,3 @@ public class PropertyService {
         return propertyRepository.findByAvailabilityStatus(true);
     }
 }
-

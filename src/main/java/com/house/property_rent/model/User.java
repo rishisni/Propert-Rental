@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 
 @Entity
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Automatically incrementing ID
     private Long userId;
@@ -15,6 +16,9 @@ public class User {
     private String password;
     private String userName;
     private double walletBalance;
+
+    private String role; // "USER" or "ADMIN"
+    private boolean isVerified = true; // Default to true
 
     // Getters and Setters
     public Long getUserId() {
@@ -55,5 +59,21 @@ public class User {
 
     public void setWalletBalance(double walletBalance) {
         this.walletBalance = walletBalance;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public boolean isVerified() {
+        return isVerified;
+    }
+
+    public void setVerified(boolean verified) {
+        isVerified = verified;
     }
 }
